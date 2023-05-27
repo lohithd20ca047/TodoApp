@@ -1,0 +1,25 @@
+{
+    "name": "college",
+
+    "todoItems": [
+
+        {
+            "createdDate": "21-05-2023",
+            "name": "study chapter 1",
+            "isCompleted": false,
+            "dueDate": "28-05-2023",
+            "completedDate": null
+
+        },
+        {
+            "createdDate": "21-05-2023",
+            "name": "study chapter 1",
+            "isCompleted": false,
+            "dueDate": "28-05-2023",
+            "completedDate": null
+
+        }
+
+    ]
+
+}
