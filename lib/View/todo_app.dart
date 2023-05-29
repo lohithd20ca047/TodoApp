@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'todo_categories_page.dart';
 
 class TodoApp extends StatelessWidget {
   const TodoApp({Key? key}) : super(key: key);
@@ -10,7 +9,7 @@ class TodoApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.cyan),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const TodoCategories(),
     );
   }
 }

@@ -1,15 +1,15 @@
-class TodoCategory {
-  TodoCategory({
+class Todo {
+  Todo({
     required this.name,
     required this.todoItems,
   });
   late final String name;
-  late final List<TodoItems> todoItems;
+  late final List<TodoItem> todoItems;
 
-  TodoCategory.fromJson(Map<String, dynamic> json) {
+  Todo.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     todoItems =
-        List.from(json['todoItems']).map((e) => TodoItems.fromJson(e)).toList();
+        List.from(json['todoItems']).map((e) => TodoItem.fromJson(e)).toList();
   }
 
   Map<String, dynamic> toJson() {
@@ -20,8 +20,8 @@ class TodoCategory {
   }
 }
 
-class TodoItems {
-  TodoItems({
+class TodoItem {
+  TodoItem({
     this.createdDate,
     this.name,
     this.isCompleted,
@@ -34,7 +34,7 @@ class TodoItems {
   String? dueDate;
   String? completedDate;
 
-  TodoItems.fromJson(Map<String, dynamic> json) {
+  TodoItem.fromJson(Map<String, dynamic> json) {
     createdDate = json['createdDate'];
     name = json['name'];
     isCompleted = json['isCompleted'];
