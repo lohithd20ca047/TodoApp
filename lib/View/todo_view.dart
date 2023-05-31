@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:work_space/model/todo_category_item.dart';
 import 'package:work_space/service/todo_service.dart';
+import 'package:work_space/view/todo_category_item_form.dart';
 
 class TodoView extends StatefulWidget {
   final String? category;
@@ -26,9 +27,12 @@ class _TodoViewState extends State<TodoView> {
   }
 
   Future addTodoItem() async {
-    var todoItem = TodoItem(createdDate: '28-05-2023', name: 'Complete recipe app', isCompleted: false, dueDate: '30-05-2023', completedDate: null);
-    await addTodo(widget.category!, todoItem);
-    setState(() {});
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Dialog(child: TodoCategoryItemForm());
+      },
+    );
   }
 
   Widget getTodoItemsWidget() {
@@ -61,9 +65,7 @@ class _TodoViewState extends State<TodoView> {
           trailing: item.isCompleted! ? const Icon(Icons.check_box) : const Icon(Icons.pending),
           onLongPress: () async {
             await deleteTodo(widget.category!, item);
-            setState(() {
-              
-            });
+            setState(() {});
           },
         );
       },
